@@ -5,8 +5,51 @@
 }
 
 @theme {
-  --color-text-primary: hsl(14, 65%, 9%);
+  --color-text-title: #24110c;
+  --color-text-primary: #241613;
+  --color-text-secondary: #c24010;
+  --color-text-tertiary: hsl(14, 25%, 72%);
   --color-text-activate: hsl(14, 86%, 42%);
-  --color-text-secondary: hsl(14, 86%, 60%);
   --color-bg-primary: hsl(20, 50%, 98%);
+  --color-border-primary: hsl(14, 25%, 72%);
+}
+
+.noItems {
+  color: #86625a;
+  border-color: #86625a;
+}
+
+.addButton {
+  @apply w-44 rounded-4xl;
+  height: 2.75rem;
+  z-index: 10;
+  position: absolute;
+  bottom: -8%;
+  right: 13.3%;
+  transition: all 0.2s ease-in-out;
+}
+
+.add:hover {
+  border-color: var(--color-text-activate);
+  color: var(--color-text-activate);
+}
+
+.add:active {
+  border-color: var(--color-text-activate);
+  color: var(--color-bg-primary);
+}
+
+.add:focus {
+  outline: none;
+  border-color: var(--color-text-activate);
+  color: var(--color-text-activate);
+}
+
+.indeButton {
+  @apply rounded-full h-5 w-5 flex justify-center items-center border-white border-2 cursor-pointer text-white;
+  transition: all 0.1s ease-in;
+}
+
+.indeButton:hover {
+  @apply bg-white text-text-activate;
 }

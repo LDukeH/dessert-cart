@@ -8,9 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${redHatText.className} antialiased bg-bg-primary min-w-screen min-h-screen`}
-      >
+      <body className={`${redHatText.className} antialiased bg-bg-primary `}>
         {children}
       </body>
     </html>
