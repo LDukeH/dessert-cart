@@ -12,6 +12,10 @@
   --color-text-activate: hsl(14, 86%, 42%);
   --color-bg-primary: hsl(20, 50%, 98%);
   --color-border-primary: hsl(14, 25%, 72%);
+
+  --breakpoint-mobile: 770px;
+  --breakpoint-desktop: 1050px;
+  --breakpoint-large: 1280px;
 }
 
 .noItems {
@@ -52,4 +56,19 @@
 
 .indeButton:hover {
   @apply bg-white text-text-activate;
+}
+
+.modal-layout {
+  @apply fixed w-screen h-screen inset-0 z-20 bg-black opacity-50;
+}
+
+.modal-content {
+  @apply fixed top-1/8 z-30;
+  background-color: white;
+  min-height: 38rem;
+}
+
+.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #fdf4ff #fdf4ff;
 }

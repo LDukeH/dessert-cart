@@ -1,6 +1,7 @@
 "use client";
 
 import useCartStore from "@/store/cartStore";
+import useModalStore from "@/store/modalStore";
 import Image from "next/image";
 import RemoveIcon from "@/public/icon-remove-item.svg";
 import CarbonNeural from "@/public/icon-carbon-neutral.svg";
@@ -53,15 +54,16 @@ function CartItem({ item }: { item: any }) {
 
 export function Cart() {
   const { cart } = useCartStore();
+  const { toggleModal } = useModalStore();
 
+  //
   const totalItems = cart.reduce((total, item) => total + item.quantity!, 0);
-
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity!,
     0
   );
   return (
-    <div className="w-full bg-white rounded-xl p-5 shadow-sm">
+    <div className="w-98 mobile:w-90 desktop:w-88 bg-white rounded-xl p-5 shadow-sm mx-auto">
       <div className="text-text-secondary font-bold text-2xl">
         Your Cart ({totalItems})
       </div>
@@ -96,7 +98,10 @@ export function Cart() {
           </div>
 
           {/* Confirm Order */}
-          <button className="bg-text-activate text-white w-full h-14 text-xl font-medium rounded-4xl mt-12 cursor-pointer active:brightness-75 transition-all duration-200">
+          <button
+            className="bg-text-activate text-white w-full h-14 text-xl font-medium rounded-4xl mt-12 cursor-pointer active:brightness-75 transition-all duration-200"
+            onClick={() => toggleModal(true)}
+          >
             Confirm Order
           </button>
         </div>

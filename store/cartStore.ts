@@ -9,8 +9,7 @@ interface CartState {
   decreaseQuantity: (item: CartItem) => void;
   removeFromCart: (item: CartItem) => void;
   getQuantity: (item: CartItem) => number;
-  // Uncomment if you want to implement clearCart functionality
-  // clearCart: () => void;
+  clearCart: () => void;
 }
 
 const useCartStore = create<CartState>((set, get) => ({
@@ -63,6 +62,7 @@ const useCartStore = create<CartState>((set, get) => ({
     );
     return itemIndex !== -1 ? get().cart[itemIndex].quantity! : 0;
   },
+  clearCart: () => set(() => ({ cart: [] })),
 }));
 
 export default useCartStore;

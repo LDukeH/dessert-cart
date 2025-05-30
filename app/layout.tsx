@@ -1,6 +1,5 @@
 import "./globals.css";
 import { redHatText } from "@/app/font";
-
 export default function RootLayout({
   children,
 }: Readonly<{

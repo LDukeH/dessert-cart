@@ -70,7 +70,7 @@ function AddButton({ item }: { item: CartItem }) {
 
 export function DessertCard({ item }: { item: CartItem }) {
   return (
-    <div className="w-fit">
+    <div className="w-fit mx-auto">
       <div className="w-62 h-62 relative">
         <Image
           fill={true}
