@@ -19,30 +19,31 @@ function AddButton({ item }: { item: CartItem }) {
     <AnimatePresence>
       {!(quantity > 0) ? (
         <motion.button
-          key="add"
-          className="addButton cursor-pointer add flex items-center justify-between px-7 text-text-primary font-medium bg-bg-primary border-1"
-          initial={{ opacity: 0, y: -200 }}
+          className="addButton cursor-pointer add px-7 text-text-primary font-medium bg-bg-primary border-1"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -200 }}
+          exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.2, ease: "easeIn" }}
           onClick={() => {
             addToCart(item);
           }}
         >
-          <AddToCartIcon />
-          Add to Cart
+          <div key="add" className="flex items-center justify-between ">
+            <AddToCartIcon />
+            Add to Cart
+          </div>
         </motion.button>
       ) : (
         // if quantity is greater than 0, show the increment and decrement buttons
         <motion.div
           className="addButton flex items-center justify-between px-7 text-text-primary font-medium bg-text-activate"
-          key="counter"
-          initial={{ opacity: 0, y: 200 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 200 }}
+          exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.2, ease: "linear" }}
         >
           <button
+            key="counter"
             className="indeButton"
             onClick={() => {
               decreaseQuantity(item);
