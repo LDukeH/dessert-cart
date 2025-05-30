@@ -21,10 +21,10 @@ function AddButton({ item }: { item: CartItem }) {
         <motion.button
           key="add"
           className="addButton cursor-pointer add flex items-center justify-between px-7 text-text-primary font-medium bg-bg-primary border-1"
-          initial={{ opacity: 0, y: -40 }}
+          initial={{ opacity: 0, y: -200 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -400 }}
-          transition={{ duration: 0.1, ease: "easeIn" }}
+          exit={{ opacity: 0, y: -200 }}
+          transition={{ duration: 0.2, ease: "easeIn" }}
           onClick={() => {
             addToCart(item);
           }}
@@ -37,10 +37,10 @@ function AddButton({ item }: { item: CartItem }) {
         <motion.div
           className="addButton flex items-center justify-between px-7 text-text-primary font-medium bg-text-activate"
           key="counter"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 400 }}
-          transition={{ duration: 0.1, ease: "linear" }}
+          exit={{ opacity: 0, y: 200 }}
+          transition={{ duration: 0.2, ease: "linear" }}
         >
           <button
             className="indeButton"
